@@ -1,0 +1,737 @@
+[
+  {
+    "id": "dev-01",
+    "split": "development",
+    "category": "single",
+    "query": "DB 연결이 끊어져 서비스가 멈췄어요",
+    "monitoring": [
+      {
+        "system_name": "test-service",
+        "status": "degraded",
+        "cpu_percent": 50.0,
+        "memory_percent": 50.0,
+        "alerts": [
+          "database down"
+        ]
+      }
+    ],
+    "expected": [
+      "db-down"
+    ],
+    "reason": "데이터베이스 중단 및 장애 전환 절차 필요"
+  },
+  {
+    "id": "dev-02",
+    "split": "development",
+    "category": "single",
+    "query": "주 데이터베이스가 응답하지 않아 복제본 전환을 검토합니다",
+    "monitoring": [
+      {
+        "system_name": "test-service",
+        "status": "degraded",
+        "cpu_percent": 50.0,
+        "memory_percent": 50.0,
+        "alerts": []
+      }
+    ],
+    "expected": [
+      "db-down"
+    ],
+    "reason": "데이터베이스 중단 및 장애 전환 절차 필요"
+  },
+  {
+    "id": "dev-03",
+    "split": "development",
+    "category": "single",
+    "query": "CPU가 갑자기 치솟았어요",
+    "monitoring": [
+      {
+        "system_name": "test-service",
+        "status": "degraded",
+        "cpu_percent": 50.0,
+        "memory_percent": 50.0,
+        "alerts": [
+          "CPU 95%"
+        ]
+      }
+    ],
+    "expected": [
+      "cpu-spike"
+    ],
+    "reason": "프로세서 부하 조사 및 완화 절차 필요"
+  },
+  {
+    "id": "dev-04",
+    "split": "development",
+    "category": "single",
+    "query": "프로세서가 포화되어 배포 직후 처리량이 떨어졌습니다",
+    "monitoring": [
+      {
+        "system_name": "test-service",
+        "status": "degraded",
+        "cpu_percent": 50.0,
+        "memory_percent": 50.0,
+        "alerts": []
+      }
+    ],
+    "expected": [
+      "cpu-spike"
+    ],
+    "reason": "프로세서 부하 조사 및 완화 절차 필요"
+  },
+  {
+    "id": "dev-05",
+    "split": "development",
+    "category": "single",
+    "query": "로그 저장 공간이 가득 찼어요",
+    "monitoring": [
+      {
+        "system_name": "test-service",
+        "status": "degraded",
+        "cpu_percent": 50.0,
+        "memory_percent": 50.0,
+        "alerts": [
+          "disk space low"
+        ]
+      }
+    ],
+    "expected": [
+      "disk-full"
+    ],
+    "reason": "저장 공간 확보 절차 필요"
+  },
+  {
+    "id": "dev-06",
+    "split": "development",
+    "category": "single",
+    "query": "오래된 백업 때문에 볼륨 여유 공간이 없습니다",
+    "monitoring": [
+      {
+        "system_name": "test-service",
+        "status": "degraded",
+        "cpu_percent": 50.0,
+        "memory_percent": 50.0,
+        "alerts": []
+      }
+    ],
+    "expected": [
+      "disk-full"
+    ],
+    "reason": "저장 공간 확보 절차 필요"
+  },
+  {
+    "id": "dev-07",
+    "split": "development",
+    "category": "single",
+    "query": "응답 지연과 커넥션 풀 포화가 발생했어요",
+    "monitoring": [
+      {
+        "system_name": "test-service",
+        "status": "degraded",
+        "cpu_percent": 50.0,
+        "memory_percent": 50.0,
+        "alerts": [
+          "p95 latency 2s"
+        ]
+      }
+    ],
+    "expected": [
+      "high-latency"
+    ],
+    "reason": "응답 지연 또는 커넥션 풀 병목 조사 필요"
+  },
+  {
+    "id": "dev-08",
+    "split": "development",
+    "category": "single",
+    "query": "연결을 기다리느라 요청 처리가 오래 걸립니다",
+    "monitoring": [
+      {
+        "system_name": "test-service",
+        "status": "degraded",
+        "cpu_percent": 50.0,
+        "memory_percent": 50.0,
+        "alerts": [
+          "connection pool 96% used"
+        ]
+      }
+    ],
+    "expected": [
+      "high-latency"
+    ],
+    "reason": "응답 지연 또는 커넥션 풀 병목 조사 필요"
+  },
+  {
+    "id": "dev-09",
+    "split": "development",
+    "category": "single",
+    "query": "메모리가 계속 늘어 힙이 꽉 찹니다",
+    "monitoring": [
+      {
+        "system_name": "test-service",
+        "status": "degraded",
+        "cpu_percent": 50.0,
+        "memory_percent": 50.0,
+        "alerts": [
+          "heap near limit"
+        ]
+      }
+    ],
+    "expected": [
+      "memory-leak"
+    ],
+    "reason": "메모리 증가 및 힙 조사 필요"
+  },
+  {
+    "id": "dev-10",
+    "split": "development",
+    "category": "single",
+    "query": "반환되지 않는 객체로 OOM이 반복됩니다",
+    "monitoring": [
+      {
+        "system_name": "test-service",
+        "status": "degraded",
+        "cpu_percent": 50.0,
+        "memory_percent": 50.0,
+        "alerts": []
+      }
+    ],
+    "expected": [
+      "memory-leak"
+    ],
+    "reason": "메모리 증가 및 힙 조사 필요"
+  },
+  {
+    "id": "dev-11",
+    "split": "development",
+    "category": "single",
+    "query": "서비스 간 호출에서 타임아웃이 납니다",
+    "monitoring": [
+      {
+        "system_name": "test-service",
+        "status": "degraded",
+        "cpu_percent": 50.0,
+        "memory_percent": 50.0,
+        "alerts": [
+          "upstream timeout"
+        ]
+      }
+    ],
+    "expected": [
+      "network-timeout"
+    ],
+    "reason": "네트워크 경로 및 타임아웃 조사 필요"
+  },
+  {
+    "id": "dev-12",
+    "split": "development",
+    "category": "single",
+    "query": "DNS 오류와 패킷 손실로 다른 서버 연결이 끊깁니다",
+    "monitoring": [
+      {
+        "system_name": "test-service",
+        "status": "degraded",
+        "cpu_percent": 50.0,
+        "memory_percent": 50.0,
+        "alerts": []
+      }
+    ],
+    "expected": [
+      "network-timeout"
+    ],
+    "reason": "네트워크 경로 및 타임아웃 조사 필요"
+  },
+  {
+    "id": "eval-01",
+    "split": "evaluation",
+    "category": "single",
+    "query": "데이터베이스 장애로 모든 조회 요청이 실패합니다",
+    "monitoring": [
+      {
+        "system_name": "test-service",
+        "status": "degraded",
+        "cpu_percent": 50.0,
+        "memory_percent": 50.0,
+        "alerts": [
+          "primary database down"
+        ]
+      }
+    ],
+    "expected": [
+      "db-down"
+    ],
+    "reason": "데이터베이스 중단 및 장애 전환 절차 필요"
+  },
+  {
+    "id": "eval-02",
+    "split": "evaluation",
+    "category": "single",
+    "query": "주 DB 프로세스가 종료됐고 대기 노드로 전환해야 합니다",
+    "monitoring": [
+      {
+        "system_name": "test-service",
+        "status": "degraded",
+        "cpu_percent": 50.0,
+        "memory_percent": 50.0,
+        "alerts": [
+          "primary process unavailable"
+        ]
+      }
+    ],
+    "expected": [
+      "db-down"
+    ],
+    "reason": "데이터베이스 중단 및 장애 전환 절차 필요"
+  },
+  {
+    "id": "eval-03",
+    "split": "evaluation",
+    "category": "single",
+    "query": "데이터베이스 인스턴스가 죽어 복제 서버로 failover가 필요합니다",
+    "monitoring": [
+      {
+        "system_name": "test-service",
+        "status": "degraded",
+        "cpu_percent": 50.0,
+        "memory_percent": 50.0,
+        "alerts": []
+      }
+    ],
+    "expected": [
+      "db-down"
+    ],
+    "reason": "데이터베이스 중단 및 장애 전환 절차 필요"
+  },
+  {
+    "id": "eval-04",
+    "split": "evaluation",
+    "category": "single",
+    "query": "배치 실행 이후 CPU 사용량이 99%에 도달했습니다",
+    "monitoring": [
+      {
+        "system_name": "test-service",
+        "status": "degraded",
+        "cpu_percent": 50.0,
+        "memory_percent": 50.0,
+        "alerts": [
+          "CPU saturation"
+        ]
+      }
+    ],
+    "expected": [
+      "cpu-spike"
+    ],
+    "reason": "프로세서 부하 조사 및 완화 절차 필요"
+  },
+  {
+    "id": "eval-05",
+    "split": "evaluation",
+    "category": "single",
+    "query": "반복 계산이 프로세서를 점유하니 프로파일링하고 싶습니다",
+    "monitoring": [
+      {
+        "system_name": "test-service",
+        "status": "degraded",
+        "cpu_percent": 50.0,
+        "memory_percent": 50.0,
+        "alerts": [
+          "compute resources saturated"
+        ]
+      }
+    ],
+    "expected": [
+      "cpu-spike"
+    ],
+    "reason": "프로세서 부하 조사 및 완화 절차 필요"
+  },
+  {
+    "id": "eval-06",
+    "split": "evaluation",
+    "category": "single",
+    "query": "배포 이후 무한 반복 연산으로 연산 자원이 포화됐습니다",
+    "monitoring": [
+      {
+        "system_name": "test-service",
+        "status": "degraded",
+        "cpu_percent": 50.0,
+        "memory_percent": 50.0,
+        "alerts": []
+      }
+    ],
+    "expected": [
+      "cpu-spike"
+    ],
+    "reason": "프로세서 부하 조사 및 완화 절차 필요"
+  },
+  {
+    "id": "eval-07",
+    "split": "evaluation",
+    "category": "single",
+    "query": "로그 파티션 사용량이 98%라 쓰기에 실패합니다",
+    "monitoring": [
+      {
+        "system_name": "test-service",
+        "status": "degraded",
+        "cpu_percent": 50.0,
+        "memory_percent": 50.0,
+        "alerts": [
+          "disk usage 98%"
+        ]
+      }
+    ],
+    "expected": [
+      "disk-full"
+    ],
+    "reason": "저장 공간 확보 절차 필요"
+  },
+  {
+    "id": "eval-08",
+    "split": "evaluation",
+    "category": "single",
+    "query": "임시 파일이 쌓여 저장 장치에 빈 공간이 없습니다",
+    "monitoring": [
+      {
+        "system_name": "test-service",
+        "status": "degraded",
+        "cpu_percent": 50.0,
+        "memory_percent": 50.0,
+        "alerts": [
+          "filesystem no free blocks"
+        ]
+      }
+    ],
+    "expected": [
+      "disk-full"
+    ],
+    "reason": "저장 공간 확보 절차 필요"
+  },
+  {
+    "id": "eval-09",
+    "split": "evaluation",
+    "category": "single",
+    "query": "오래된 로그와 백업으로 볼륨이 꽉 차 정리가 필요합니다",
+    "monitoring": [
+      {
+        "system_name": "test-service",
+        "status": "degraded",
+        "cpu_percent": 50.0,
+        "memory_percent": 50.0,
+        "alerts": []
+      }
+    ],
+    "expected": [
+      "disk-full"
+    ],
+    "reason": "저장 공간 확보 절차 필요"
+  },
+  {
+    "id": "eval-10",
+    "split": "evaluation",
+    "category": "single",
+    "query": "p95 응답시간이 3초이고 연결 풀이 거의 찼습니다",
+    "monitoring": [
+      {
+        "system_name": "test-service",
+        "status": "degraded",
+        "cpu_percent": 50.0,
+        "memory_percent": 50.0,
+        "alerts": [
+          "p95 latency 3s",
+          "pool 97% used"
+        ]
+      }
+    ],
+    "expected": [
+      "high-latency"
+    ],
+    "reason": "응답 지연 또는 커넥션 풀 병목 조사 필요"
+  },
+  {
+    "id": "eval-11",
+    "split": "evaluation",
+    "category": "single",
+    "query": "느린 쿼리 때문에 커넥션 대기 시간이 길어졌습니다",
+    "monitoring": [
+      {
+        "system_name": "test-service",
+        "status": "degraded",
+        "cpu_percent": 50.0,
+        "memory_percent": 50.0,
+        "alerts": [
+          "connection pool exhausted"
+        ]
+      }
+    ],
+    "expected": [
+      "high-latency"
+    ],
+    "reason": "응답 지연 또는 커넥션 풀 병목 조사 필요"
+  },
+  {
+    "id": "eval-12",
+    "split": "evaluation",
+    "category": "single",
+    "query": "특정 인스턴스에서 응답 지연이 심해 느린 쿼리를 조사하려 합니다",
+    "monitoring": [
+      {
+        "system_name": "test-service",
+        "status": "degraded",
+        "cpu_percent": 50.0,
+        "memory_percent": 50.0,
+        "alerts": []
+      }
+    ],
+    "expected": [
+      "high-latency"
+    ],
+    "reason": "응답 지연 또는 커넥션 풀 병목 조사 필요"
+  },
+  {
+    "id": "eval-13",
+    "split": "evaluation",
+    "category": "single",
+    "query": "힙 사용량이 계속 증가하며 OOM 경보가 발생합니다",
+    "monitoring": [
+      {
+        "system_name": "test-service",
+        "status": "degraded",
+        "cpu_percent": 50.0,
+        "memory_percent": 50.0,
+        "alerts": [
+          "heap near limit"
+        ]
+      }
+    ],
+    "expected": [
+      "memory-leak"
+    ],
+    "reason": "메모리 증가 및 힙 조사 필요"
+  },
+  {
+    "id": "eval-14",
+    "split": "evaluation",
+    "category": "single",
+    "query": "객체와 이벤트 리스너가 해제되지 않아 메모리가 누적됩니다",
+    "monitoring": [
+      {
+        "system_name": "test-service",
+        "status": "degraded",
+        "cpu_percent": 50.0,
+        "memory_percent": 50.0,
+        "alerts": [
+          "unreleased objects accumulating"
+        ]
+      }
+    ],
+    "expected": [
+      "memory-leak"
+    ],
+    "reason": "메모리 증가 및 힙 조사 필요"
+  },
+  {
+    "id": "eval-15",
+    "split": "evaluation",
+    "category": "single",
+    "query": "트래픽은 일정한데 메모리 점유율만 계속 올라갑니다",
+    "monitoring": [
+      {
+        "system_name": "test-service",
+        "status": "degraded",
+        "cpu_percent": 50.0,
+        "memory_percent": 50.0,
+        "alerts": []
+      }
+    ],
+    "expected": [
+      "memory-leak"
+    ],
+    "reason": "메모리 증가 및 힙 조사 필요"
+  },
+  {
+    "id": "eval-16",
+    "split": "evaluation",
+    "category": "single",
+    "query": "다른 서비스로 보낸 요청이 504로 종료됩니다",
+    "monitoring": [
+      {
+        "system_name": "test-service",
+        "status": "degraded",
+        "cpu_percent": 50.0,
+        "memory_percent": 50.0,
+        "alerts": [
+          "upstream timeout 504"
+        ]
+      }
+    ],
+    "expected": [
+      "network-timeout"
+    ],
+    "reason": "네트워크 경로 및 타임아웃 조사 필요"
+  },
+  {
+    "id": "eval-17",
+    "split": "evaluation",
+    "category": "single",
+    "query": "패킷 유실과 DNS 해석 실패 때문에 서비스 간 통신이 안 됩니다",
+    "monitoring": [
+      {
+        "system_name": "test-service",
+        "status": "degraded",
+        "cpu_percent": 50.0,
+        "memory_percent": 50.0,
+        "alerts": [
+          "name resolution failure; packet loss"
+        ]
+      }
+    ],
+    "expected": [
+      "network-timeout"
+    ],
+    "reason": "네트워크 경로 및 타임아웃 조사 필요"
+  },
+  {
+    "id": "eval-18",
+    "split": "evaluation",
+    "category": "single",
+    "query": "방화벽 변경 후 외부 호출이 시간 초과됩니다",
+    "monitoring": [
+      {
+        "system_name": "test-service",
+        "status": "degraded",
+        "cpu_percent": 50.0,
+        "memory_percent": 50.0,
+        "alerts": []
+      }
+    ],
+    "expected": [
+      "network-timeout"
+    ],
+    "reason": "네트워크 경로 및 타임아웃 조사 필요"
+  },
+  {
+    "id": "eval-19",
+    "split": "evaluation",
+    "category": "compound",
+    "query": "CPU 급증과 메모리 누수가 동시에 나타납니다",
+    "monitoring": [
+      {
+        "system_name": "test-service",
+        "status": "degraded",
+        "cpu_percent": 50.0,
+        "memory_percent": 50.0,
+        "alerts": [
+          "CPU 99%",
+          "heap growing"
+        ]
+      }
+    ],
+    "expected": [
+      "cpu-spike",
+      "memory-leak"
+    ],
+    "reason": "독립적인 두 증상의 대응 매뉴얼을 모두 정답으로 인정"
+  },
+  {
+    "id": "eval-20",
+    "split": "evaluation",
+    "category": "compound",
+    "query": "로그 디스크가 가득 찼고 서비스 간 통신도 타임아웃입니다",
+    "monitoring": [
+      {
+        "system_name": "test-service",
+        "status": "degraded",
+        "cpu_percent": 50.0,
+        "memory_percent": 50.0,
+        "alerts": [
+          "disk full",
+          "network timeout"
+        ]
+      }
+    ],
+    "expected": [
+      "disk-full",
+      "network-timeout"
+    ],
+    "reason": "독립적인 두 증상의 대응 매뉴얼을 모두 정답으로 인정"
+  },
+  {
+    "id": "eval-21",
+    "split": "evaluation",
+    "category": "compound",
+    "query": "DB가 다운됐고 애플리케이션 CPU도 포화 상태입니다",
+    "monitoring": [
+      {
+        "system_name": "test-service",
+        "status": "degraded",
+        "cpu_percent": 50.0,
+        "memory_percent": 50.0,
+        "alerts": [
+          "database down",
+          "CPU 98%"
+        ]
+      }
+    ],
+    "expected": [
+      "db-down",
+      "cpu-spike"
+    ],
+    "reason": "독립적인 두 증상의 대응 매뉴얼을 모두 정답으로 인정"
+  },
+  {
+    "id": "eval-22",
+    "split": "evaluation",
+    "category": "compound",
+    "query": "연결 풀 포화로 응답이 지연되고 메모리도 계속 증가합니다",
+    "monitoring": [
+      {
+        "system_name": "test-service",
+        "status": "degraded",
+        "cpu_percent": 50.0,
+        "memory_percent": 50.0,
+        "alerts": [
+          "connection pool 98%",
+          "memory growing"
+        ]
+      }
+    ],
+    "expected": [
+      "high-latency",
+      "memory-leak"
+    ],
+    "reason": "독립적인 두 증상의 대응 매뉴얼을 모두 정답으로 인정"
+  },
+  {
+    "id": "eval-23",
+    "split": "evaluation",
+    "category": "insufficient",
+    "query": "서비스 상태를 확인해주세요",
+    "monitoring": [
+      {
+        "system_name": "test-service",
+        "status": "healthy",
+        "cpu_percent": 50.0,
+        "memory_percent": 50.0,
+        "alerts": []
+      }
+    ],
+    "expected": [],
+    "reason": "구체적인 장애 증거가 없어 런북 정답을 지정할 수 없음"
+  },
+  {
+    "id": "eval-24",
+    "split": "evaluation",
+    "category": "insufficient",
+    "query": "사용자가 뭔가 이상하다고 합니다",
+    "monitoring": [
+      {
+        "system_name": "test-service",
+        "status": "healthy",
+        "cpu_percent": 50.0,
+        "memory_percent": 50.0,
+        "alerts": []
+      }
+    ],
+    "expected": [],
+    "reason": "증상과 알림이 없어 추가 정보가 필요함"
+  }
+]

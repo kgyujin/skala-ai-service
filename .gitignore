@@ -1,0 +1,41 @@
+.env
+.venv/
+session.db
+__pycache__/
+*.log
+ref/
+result/
+# 로컬 세션 DB와 동기화 복사본
+*.db
+*.db-*
+*.sqlite
+*.sqlite3
+*.pyc
+.DS_Store
+
+# 인증정보 변형 파일과 로컬 도구 캐시
+.env.*
+!.env.example
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# 로컬 편집기와 재생성 가능한 실행 결과
+.vscode/
+node_modules/
+eval/results/*.json
+
+# 기존 강의 안내·보고서 초안·캡처는 로컬에 보존
+/doc/README.md
+/doc/RAG_REPORT.md
+/doc/manual_ollma.md
+/doc/manual_openai.md
+/doc/regression_test_queries.md
+/doc/rag-presentation.html
+/doc/image_usecase/
+/doc/image_usecase_openai/
+
+# 로컬 에이전트 작업 지침과 자동 생성 문서
+/AGENTS.md
+/doc/README.html
