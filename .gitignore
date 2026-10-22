@@ -39,3 +39,6 @@ eval/results/*.json
 # 로컬 에이전트 작업 지침과 자동 생성 문서
 /AGENTS.md
 /doc/README.html
+
+# 과제 2번의 실행 DB, 복구 자료와 로컬 실행 상태
+cargo_game/.runtime/
