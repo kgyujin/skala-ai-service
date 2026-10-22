@@ -33,6 +33,12 @@ OPENAI_URL = "https://api.openai.com/v1/chat/completions"
 KNOWN_SYSTEMS = load_known_systems()
 
 
+ROUTE_INSTRUCTIONS = (
+    'JSON 객체로만 응답하라. 스키마: {"route": "chat"|"incident", '
+    '"needs_analysis": boolean}'
+)
+
+
 PLAN_INSTRUCTIONS = (
     'JSON 객체로만 응답하라. 스키마: {"needs_analysis": boolean, '
     '"tasks": [{"agent": "research"|"analysis", "target": string(선택)}]}'
