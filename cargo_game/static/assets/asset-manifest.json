@@ -1,0 +1,28 @@
+{
+  "generator": "built-in imagegen",
+  "art_direction": "저채도 빈티지 SF 잉크 선화. 회색빛 올리브, 바랜 종이색. 광택과 강한 발광 제외.",
+  "assets": {
+    "spaceport.png": {
+      "sha256": "2210a78bd074a1d06584f00a1ba63af2c2e6aee3c75ec5930da47f661be321f8",
+      "bytes": 2841146
+    },
+    "card-art.png": {
+      "sha256": "55c64c1dc6eb1337da6680a6a581e9535def9ae6debd23a57f19fba7b1fe8376",
+      "bytes": 3730775
+    },
+    "merchants.png": {
+      "sha256": "63a15d174ede82a1fb44f4f670d4182b60ea86049be966c55addc066a91948b4",
+      "bytes": 2276016
+    },
+    "expressions.png": {
+      "sha256": "d5193abfc7eaa40d4376e8fc0074b1ed8544f30272b397c20cb203b9cfeaec5a",
+      "bytes": 2603609
+    }
+  },
+  "prompt_briefs": {
+    "spaceport.png": "기존 주황/청록 그림을 낮은 채도, 잉크와 과슈 질감의 우주항으로 재작성. 하단 빈 작업대, 창밖 소형 수송선. 인물과 텍스트 없음.",
+    "merchants.png": "자연스러운 성인 작업자 상인 두 명. 잉크 선, 무광 회색/올리브 작업복. 원본 표정 제작용 2열 투명 아틀라스.",
+    "expressions.png": "기존 두 상인 정체성과 비율 유지. 4열 2행 정사각형 셀. 기본, 생각, 수락, 거절 표정. 투명 배경.",
+    "card-art.png": "4열 3행 카드 삽화. 스캐너, 연료 흥정, 부품 저울, 카드 교환, 나침반, 화물, 가격 돌파, 빠른 제안, 시계, 거래 이력, 수요 분석, 계약서. 텍스트와 테두리 없음."
+  }
+}
